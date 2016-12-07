@@ -1,26 +1,24 @@
 package com.yet.spring.core;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
 @NoArgsConstructor
 @Getter
 public class Client {
-	private String id;
-	private String name;
-	
-	public Client(String id, String name){
-		this.id = id;
-		this.name = name;
-	}
-	
-	public String getId(){
-		return id;
-	}
-	
-	public String getName(){
-		return name;
-	}
+    private String id;
+    private String name;
+
+    public Client(String id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
 }
