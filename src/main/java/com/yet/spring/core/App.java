@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.text.DateFormat;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import com.yet.spring.loggers.EventLogger;
 
 public class App {
 	static Client client;
