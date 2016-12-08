@@ -12,7 +12,7 @@
 
 	<bean id="app" class="com.yet.spring.core.App">
 		<constructor-arg ref="client" />
-		<constructor-arg ref="fileEventLogger" />
+		<constructor-arg ref="cacheFileEventLogger" />
 	</bean>
 
 	<bean id="eventLogger" class="com.yet.spring.loggers.ConsoleEventLogger" />

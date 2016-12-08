@@ -20,7 +20,7 @@ public class FileEventLogger implements EventLogger {
 		}
 	}
 
-	public void init() throws IOException {
+	private void init() throws IOException {
 		File file = new File(fileName);
 
 		// TODO uncomment
