@@ -13,8 +13,8 @@ public class App {
 	public static void main(String[] args) {
 		ConfigurableApplicationContext contex = new ClassPathXmlApplicationContext("spring.xml");
 		App app = (App) contex.getBean("app");
-		app.logEvent("log event from 1");
-		app.logEvent("log event from 2");
+		app.logEvent("log event from 1 \n");
+		app.logEvent("log event from 2 \n");
 
 		contex.close();
 	}

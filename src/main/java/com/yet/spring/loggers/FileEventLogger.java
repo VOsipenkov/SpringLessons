@@ -14,7 +14,7 @@ public class FileEventLogger implements EventLogger {
 
 	public void logEvent(Event event) {
 		try {
-			FileUtils.writeStringToFile(new File(fileName), event.toString());
+			FileUtils.writeStringToFile(new File(fileName), event.toString(), true);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -23,10 +23,7 @@ public class FileEventLogger implements EventLogger {
 	public void init() throws IOException {
 		File file = new File(fileName);
 
-		if (!file.exists()) {
-			file.mkdir();
-		}
-
+		// TODO uncomment
 		if (!file.canWrite()) {
 			throw new IOException();
 		}
