@@ -9,8 +9,7 @@
 
 	<bean id="cacheFileEventLogger" class="com.yet.spring.loggers.CacheFileEventLogger"
 		parent="fileEventLogger" destroy-method="destroy">
-		<constructor-arg value="3" />
-		<property name="fileName" value="#{fileEventLogger.fileName + ' with cache'}" />
+		<constructor-arg index="0" value="3" />
 	</bean>
 	<bean id="fileEventLogger" class="com.yet.spring.loggers.FileEventLogger"
 		init-method="init">
