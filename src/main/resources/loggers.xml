@@ -15,4 +15,13 @@
 		init-method="init">
 		<constructor-arg value="defaultFileName.txt" />
 	</bean>
+	<bean id="combinedEventLogger" class="com.yet.spring.loggers.CombinedEventLogger">
+		<constructor-arg>
+			<list>
+				<ref bean="eventLogger" />
+				<ref bean="fileEventLogger" />
+				<ref bean="cacheFileEventLogger" />
+			</list>
+		</constructor-arg>
+	</bean>
 </beans>
