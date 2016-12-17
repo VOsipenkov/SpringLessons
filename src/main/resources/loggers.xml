@@ -5,7 +5,7 @@
  		http://www.springframework.org/schema/beans
  		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 
-	<bean id="eventLogger" class="com.yet.spring.loggers.ConsoleEventLogger" />
+	<bean id="consoleEventLogger" class="com.yet.spring.loggers.ConsoleEventLogger" />
 
 	<bean id="cacheFileEventLogger" class="com.yet.spring.loggers.CacheFileEventLogger"
 		parent="fileEventLogger" destroy-method="destroy">
@@ -18,9 +18,8 @@
 	<bean id="combinedEventLogger" class="com.yet.spring.loggers.CombinedEventLogger">
 		<constructor-arg>
 			<list>
-				<ref bean="eventLogger" />
+				<ref bean="consoleEventLogger" />
 				<ref bean="fileEventLogger" />
-				<ref bean="cacheFileEventLogger" />
 			</list>
 		</constructor-arg>
 	</bean>
