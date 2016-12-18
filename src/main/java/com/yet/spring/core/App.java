@@ -22,10 +22,10 @@ public class App {
 		contex.close();
 	}
 
-	public App(Client client, EventLogger defauleLogger, Map<EventType, EventLogger> mapLoggers) {
+	public App(Client client, EventLogger defaultLogger, Map<EventType, EventLogger> mapLoggers) {
 		this.client = client;
 		this.mapLoggers = mapLoggers;
-		this.defaultLogger = defauleLogger;
+		this.defaultLogger = defaultLogger;
 	}
 
 	private void logEvent(String message, EventType eventType) {

@@ -1,9 +1,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    
-    xmlns:util="http://www.springframework.org/schema/util"
-    
-    xsi:schemaLocation="
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+
+	xsi:schemaLocation="
         http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
         
@@ -32,13 +30,13 @@
 	<bean id="app" class="com.yet.spring.core.App">
 		<constructor-arg ref="client" />
 		<constructor-arg ref="cacheFileEventLogger" />
-		<constructor-arg>
-			<map>
-				<entry key="INFO" value-ref="consoleEventLogger" />
-				<entry key="ERROR" value-ref="combinedEventLogger" />
-			</map>
-		</constructor-arg>
+		<constructor-arg ref="loggersMap" />
 	</bean>
+
+	<util:map id="loggersMap">
+		<entry key="INFO" value-ref="consoleEventLogger" />
+		<entry key="ERROR" value-ref="combinedEventLogger" />
+	</util:map>
 
 	<bean id="event" class="com.yet.spring.core.Event" scope="prototype">
 		<constructor-arg>
